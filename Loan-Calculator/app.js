@@ -15,12 +15,12 @@ function calculateResults(e) {
   const totalInterest = document.getElementById("total-interest");
 
   const principal = parseFloat(amount.value);
-  const calulatedInterest = parseFloat(interest.value) / 100 / 12;
-  const calculatedPayments = parseFloat(years.value);
+  const calculatedInterest = parseFloat(interest.value) / 100 / 12;
+  const calculatedPayments = parseFloat(years.value) * 12;
 
   // Compute monthly payment
-  const x = Math.pow(1 + calulatedInterest, calculatedPayments);
-  const monthly = (principal * x * calulatedInterest) / (x - 1);
+  const x = Math.pow(1 + calculatedInterest, calculatedPayments);
+  const monthly = (principal * x * calculatedInterest) / (x - 1);
 
   if (isFinite(monthly)) {
     monthlyPayment.value = monthly.toFixed(2);
@@ -29,30 +29,26 @@ function calculateResults(e) {
   } else {
     showError("Please check your numbers");
   }
+
   e.preventDefault();
 }
 
 // Show Error
-
 function showError(error) {
   // Create a div
+  const errorDiv = document.createElement("div");
 
   // Get elements
   const card = document.querySelector(".card");
   const heading = document.querySelector(".heading");
 
-  const errorDiv = document.createElement("div");
-
   // Add class
-
-  errorDiv.className = "alert altert-danger";
+  errorDiv.className = "alert alert-danger";
 
   // Create text node and append to div
-
   errorDiv.appendChild(document.createTextNode(error));
 
   // Insert error above heading
-
   card.insertBefore(errorDiv, heading);
 
   // Clear error after 3 seconds
