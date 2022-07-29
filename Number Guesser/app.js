@@ -24,3 +24,10 @@ const game = document.querySelector("game"),
 // Assing UI min and max
 minNum.textContent = min;
 maxNum.textContent = max;
+
+// Listen for guess
+guessBtn.addEventListener("click", function () {
+  //   let guess = parseInt(guessInput.value);
+  //   console.log(guess);
+  console.log("hello");
+});
