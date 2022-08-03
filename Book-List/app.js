@@ -40,6 +40,7 @@ UI.prototype.showAlert = function (message, className) {
   }, 3000);
 };
 
+// Clear Fiels
 UI.prototype.clearFields = function () {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
