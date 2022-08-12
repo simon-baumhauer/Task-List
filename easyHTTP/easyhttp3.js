@@ -43,7 +43,7 @@ class EasyHTTP {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     });
-    const resData = await "Resources Deleted";
+    const resData = "Resources Deleted";
     return resData;
   }
 }
