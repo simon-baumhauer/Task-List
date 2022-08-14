@@ -1,5 +1,7 @@
-// Init water object
+// Init weather object
 const weather = new Weather("London", "uk");
+// Init UI
+const ui = new UI();
 
 // Get weather on DOm load
 
@@ -12,6 +14,7 @@ function getWeather() {
     .getWeather()
     .then((results) => {
       console.log(results);
+      ui.paint(results);
     })
     .catch((err) => console.log(err));
 }
